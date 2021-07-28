@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "dist/js",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "typeRoots": ["./types"],
+    "watch": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strictNullChecks": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
+}

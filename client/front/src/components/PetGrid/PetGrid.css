@@ -1,0 +1,5 @@
+.pet_grid {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 15px;
+}

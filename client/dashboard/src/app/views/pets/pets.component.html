@@ -1,0 +1,71 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search adoptions by pet name or by adopter name"
+            [(ngModel)]="searchInput"
+            (input)="searchTitle()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header"><i class="fa fa-list"></i>Pets list</div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Breed</th>
+                <th>animal type</th>
+                <th>Age</th>
+                <th>Adopted</th>
+                <th *ngIf="isLoggedIn">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pet of pets">
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.gender }}</td>
+                <td>{{ pet.breed }}</td>
+                <td>{{ pet.animalType }}</td>
+                <td>{{ pet.age }}</td>
+                <td *ngIf="pet.isAdopted">
+                  <span class="badge badge-success">Adopted</span>
+                </td>
+                <td *ngIf="!pet.isAdopted">
+                  <span class="badge badge-info">Waiting for Adoption</span>
+                </td>
+                <td *ngIf="isLoggedIn">
+                  <a
+                    type="button"
+                    class="btn btn-sm btn-pill btn-block btn-warning"
+                    routerLink="{{ pet._id }}"
+                  >
+                    Edit
+                  </a>
+                  <button
+                    (click)="delete(pet)"
+                    type="button"
+                    class="btn btn-sm btn-pill btn-block btn-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>

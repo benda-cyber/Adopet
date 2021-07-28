@@ -1,0 +1,109 @@
+<div *ngIf="isOnline" class="logout">
+  <button class="btn btn-primary btn-block" (click)="logout()">Logout</button>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-lg-6">
+    <div class="card text-white bg-info">
+      <div class="card-body pb-0">
+        <div class="text-value">{{ this.adoptionInfos.length }}</div>
+        <div>Adoptions</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+        <canvas
+          *ngIf="lineChart2Data"
+          baseChart
+          class="chart"
+          [datasets]="lineChart2Data"
+          [labels]="lineChart2Labels"
+          [options]="lineChart2Options"
+          [colors]="lineChart2Colours"
+          [legend]="lineChart2Legend"
+          [chartType]="lineChart2Type"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-6 col-lg-6">
+    <div class="card text-white bg-primary">
+      <div class="card-body pb-0">
+        <div class="text-value">Pets age</div>
+        <div>By age group</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+        <canvas
+          *ngIf="lineChart1Data"
+          baseChart
+          class="chart"
+          [datasets]="lineChart1Data"
+          [labels]="lineChart1Labels"
+          [options]="lineChart1Options"
+          [colors]="lineChart1Colours"
+          [legend]="lineChart1Legend"
+          [chartType]="lineChart1Type"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.row-->
+<div class="row">
+  <!--/.col-->
+  <div class="col-sm-6 col-lg-6">
+    <div class="card text-white bg-warning">
+      <div class="card-body pb-0">
+        <div class="text-value">{{ adoptionRequests.length }}</div>
+        <div>Adoption requests</div>
+      </div>
+      <div class="chart-wrapper mt-3" style="height: 70px">
+        <canvas
+          *ngIf="lineChart3Data"
+          baseChart
+          class="chart"
+          [datasets]="lineChart3Data"
+          [labels]="lineChart3Labels"
+          [options]="lineChart3Options"
+          [colors]="lineChart3Colours"
+          [legend]="lineChart3Legend"
+          [chartType]="lineChart3Type"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-6 col-lg-6">
+    <div class="card text-white bg-danger">
+      <div class="card-body pb-0">
+        <div class="text-value">{{ this.pets.length }}</div>
+        <div>Pets</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+        <canvas
+          *ngIf="barChart1Data"
+          baseChart
+          class="chart"
+          [datasets]="barChart1Data"
+          [labels]="barChart1Labels"
+          [options]="barChart1Options"
+          [colors]="barChart1Colours"
+          [legend]="barChart1Legend"
+          [chartType]="barChart1Type"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+</div>
+<div class="row">
+  <div class="col-sm-12 col-lg-12">
+    <div class="card text-white bg-success">
+      <div class="card-header">Welcome to the dashboard!</div>
+      <div class="card-body">
+        It is our hope that this new print will give people a way to advocate
+        for these animals and show their support for pet adoption.
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+</div>

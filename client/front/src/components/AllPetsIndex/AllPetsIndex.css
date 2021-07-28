@@ -1,0 +1,24 @@
+.allPetsGrid{
+    margin-top: 10%;
+}
+
+.formOptions{
+    margin-bottom: 10px;
+}
+
+.main-container{
+    margin-bottom: 2%;
+}
+
+/* .petgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 15px;
+  } */
+
+  #inputsBack{
+    background-image: url("https://image.shutterstock.com/image-vector/dog-bone-isolated-seamless-pattern-260nw-1021763782.jpg");
+  }
+  
+  

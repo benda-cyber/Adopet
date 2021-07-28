@@ -1,0 +1,75 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search adoptions by pet name/ adopter name/ pet id/ adopter id"
+            [(ngModel)]="searchInput"
+            (input)="searchTitle()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-list"></i>Adoption requests list
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Pet Id</th>
+                <th>Pet name</th>
+                <th>Pet age</th>
+                <th>Adopter candidate</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Address</th>
+                <th>Message</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let adoptionRequest of adoptionRequests">
+                <td>{{ adoptionRequest.pet._id }}</td>
+                <td>{{ adoptionRequest.pet.name }}</td>
+                <td>{{ adoptionRequest.pet.age }}</td>
+                <td>{{ adoptionRequest.fullName }}</td>
+                <td>{{ adoptionRequest.email }}</td>
+                <td>{{ adoptionRequest.phoneNumber }}</td>
+                <td >{{ adoptionRequest.address }}</td>
+                <!-- style="min-width:100px;max-width: 100px" -->
+                <td >
+                  {{ adoptionRequest.message }}
+                </td>
+                <td>
+                  <a
+                    type="button"
+                    class="btn btn-sm btn-pill btn-block btn-warning"
+                    routerLink="{{ adoptionRequest._id }}"
+                  >
+                    Edit
+                  </a>
+                  <button
+                    (click)="delete(adoptionRequest)"
+                    type="button"
+                    class="btn btn-sm btn-pill btn-block btn-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/.col-->
+  </div>
+</div>

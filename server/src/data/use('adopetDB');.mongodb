@@ -1,0 +1,11 @@
+use('adopetDB');
+
+   db.pets.find(
+      { $or: [{ name: { $regex: '.*' + 'Seb' + '.*' } }, { animalType: { $regex: '.*' + 'Seb' + '.*' } }] },
+      {
+        animalType: { $ne: '', $regex: '' },
+        age: { $ne: '', $regex:'' },
+        gender: { $ne: '', $regex: '' },
+        breed: { $ne: '', $regex: '' },
+      }
+    ).exec();
